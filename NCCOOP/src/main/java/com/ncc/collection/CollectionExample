@@ -1,0 +1,51 @@
+Question 1: List
+Tạo 1 student có property id, name (trong đó có 3 student có name
+trùng nhau, id sẽ là auto increment)
+Khai báo 1 ArrayList students, sau đó
+a) In ra tổng số phần tử của students
+b) Lấy phần tử thứ 4 của students
+c) In ra phần tử đầu và phần tử cuối của students
+d) Thêm 1 phần tử vào vị trí đầu của students
+e) Thêm 1 phần tử vào vị trí cuối của students
+f) Đảo ngược vị trí của students
+g) Tạo 1 method tìm kiếm student theo id
+h) Tạo 1 method tìm kiếm student theo name
+i) Tạo 1 method để in ra các student có trùng tên
+j) Xóa name của student có id = 2;
+k) Delete student có id = 5;
+l) Tạo 1 ArrayList tên là studentCopies và add tất cả students vào
+studentCopies
+
+Question 2 (Optional): Stack & Queue
+Khai báo 1 danh sách lưu các tên học sinh tới tham dự phỏng vấn, thứ
+tự tới của các học sinh như sau:
+Nguyễn Văn Nam, Nguyễn Văn Huyên, Trần Văn Nam,
+Nguyễn Văn A
+a) Tạo 1 method để in ra thứ tự tới của các học sinh theo thứ tự từ
+muộn nhất tới sớm nhất (gợi ý dùng Stack)
+b) Tạo 1 method để in ra thứ tự tới của các học sinh theo thứ tự
+sớm nhất tới muộn nhất (gợi ý dùng Queue)
+
+Question 3 (Optional): Set
+Tạo 1 student có property id, name
+Khai báo 1 Set students, sau đó làm các chức năng tương tự List
+
+2
+Question 4 (Optional): Set
+Tạo 1 danh sách có chứa name của các student không trùng nhau
+In ra set đó
+
+Question 5 (Optional): Set
+Tạo 1 danh sách có chứa name của các student không trùng nhau.
+Sắp xếp theo name và in ra set đó
+
+Question 6: Map
+Để thay thế 1 object ta có thể tạo 1 map tên là students có key = id của
+student , value là name của students
+
+Question 7 (Optional): tiếp tục question 6
+Thực hiện các chức năng sau:
+a) In ra các key của students
+b) In ra value của students
+c) In ra danh sách students được sắp xếp theo tên của student
+d) Chuyển đổi map students sang set

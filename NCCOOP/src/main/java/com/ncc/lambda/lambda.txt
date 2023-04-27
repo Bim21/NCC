@@ -1,0 +1,15 @@
+Lamba expressions là một tính năng mới của java 8, nó cung cấp cho chúng ta cách viết
+các hàm nặc danh(anonymous functions)ngắn gọn hơn, giúp cho mã Java dễ đọc
+và dễ bảo trì hơn.
+
+Predicate, Function và Consumer là các interface function trong java được sử dụng
+phổ biến trong lambda expressions.
+    - Predicate là một interface định nghĩa một phương thức boolean test(T t)
+    để kiểm tra một điều kiện với một đối tượng đầu vào. Predicate được sử dụng
+    chủ yếu để lọc các phần tử trong một Collection hoặc một Stream. Ví dụ:
+    List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<Integer> evenNumbers = numbers.stream()
+                                        .filter(n -> n % 2 == 0)
+                                        .collect(Collectors.toList());
+    Function là một interface định nghĩa một phương thức R apply(T t)để biến đổi
+    một đối tượng đầu vào thành một đối tượng đầu ra.

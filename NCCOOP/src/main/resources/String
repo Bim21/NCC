@@ -1,0 +1,33 @@
+String là một trong những class cơ bản nhất trong Java, vì vậy nó có rất nhiều phương thức để thao tác với chuỗi. Dưới đây là một số phương thức phổ biến của class String:
+
+1.  length(): trả về độ dài của chuỗi.
+
+2.  charAt(int index): trả về ký tự ở vị trí index trong chuỗi.
+
+3.  substring(int beginIndex, int endIndex): trả về chuỗi con bắt đầu từ vị trí beginIndex và kết thúc ở vị trí endIndex-1.
+
+4.  concat(String str): nối chuỗi str vào cuối chuỗi hiện tại.
+
+5.  indexOf(char ch) hoặc indexOf(String str): tìm kiếm ký tự hoặc chuỗi str đầu tiên xuất hiện trong chuỗi.
+
+6.  lastIndexOf(char ch) hoặc lastIndexOf(String str): tìm kiếm ký tự hoặc chuỗi str xuất hiện cuối cùng trong chuỗi.
+
+7.  replace(char oldChar, char newChar) hoặc replace(String oldStr, String newStr): thay thế tất cả các ký tự hoặc chuỗi oldChar hoặc oldStr trong chuỗi thành newChar hoặc newStr.
+
+8.  toLowerCase(): chuyển đổi tất cả các ký tự trong chuỗi thành chữ thường.
+
+9.  toUpperCase(): chuyển đổi tất cả các ký tự trong chuỗi thành chữ in hoa.
+
+10. trim(): loại bỏ khoảng trắng ở đầu và cuối chuỗi.
+
+11. equals(Object obj): so sánh chuỗi hiện tại với đối tượng obj được cung cấp.
+
+compareTo(String anotherString): so sánh chuỗi hiện tại với chuỗi anotherString.
+
+startsWith(String prefix) hoặc endsWith(String suffix): kiểm tra xem chuỗi có bắt đầu hoặc kết thúc với chuỗi prefix hoặc suffix không.
+
+split(String regex): tách chuỗi thành một mảng các chuỗi con, bằng cách sử dụng regex như một biểu thức chính quy để chỉ định vị trí tách.
+
+valueOf(): chuyển đổi một giá trị của các kiểu dữ liệu nguyên thủy (int, double, boolean, ...) thành chuỗi.
+
+Và còn nhiều phương thức khác nữa, tùy thuộc vào yêu cầu sử dụng của mỗi người.

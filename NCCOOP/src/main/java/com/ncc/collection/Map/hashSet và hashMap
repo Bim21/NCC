@@ -1,0 +1,25 @@
+*Sự khác biệt giữa hashSet và hashMap
+    - Cách lưu trữ:
+        + hashSet lưu trữ dữ liệu dưới dạng các đối tượng
+        + hashMap lưu trữ dữ liệu dưỡi dạng các cặp khóa - giá trị.
+        Trong hashMap, chúng ta có thể truy xuất từng giá trị bằng cách sử dụng khóa.
+
+    - Nhân bản giá trị:
+        + hashSet không cho phép bạn thêm các giá trị trùng lặp.
+        + hashMap lưu trữ các khóa - giá trị và cho phép các khóa trùng lặp
+        nhưng không trùng lặp giá trị. Nếu ta thêm khóa trùng lặp thì khóa đó
+        sẽ sử dụng giá trị mới với khóa đó.
+    - giá trị null:
+        + Cho phép một giá trị null, không cho phép thêm nhiều giá trị null.
+
+        + Cho phép một khóa null nhưng nhiều giá trị null.
+    - phương thức chèn phần tử:
+        + hashSet: sử dụng phương thức add().
+        + hashMap: sử dụng phương thức put()
+    - hiệu suất:
+        + hashSet: chậm hơn
+        + hashMap: nhanh hơn
+    - Ứng dụng:
+        + sử dụng hashSet để duy trì tính duy nhất của dữ liệu
+        + su dụng hashMao khi tính duy nhất của dữ liệu ko còn nhiều qtrong
+

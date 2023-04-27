@@ -1,0 +1,15 @@
+
+Khi khai báo đối tượng theo kiểu final như này thì có thể thay đổi giá trị thuộc tính trong đối tượng không?
+final Intern intern = new Intern("name", "age");
+
+Có, ta có thể thay đổi giá trị của các trường trong đối tượng.
+Nhưng ta không thể gán giá trị mới cho biến intern.
+Nghĩa là không thể gán một đối tượng 'Intern' khác cho biến đó.
+
+* inner class và nested class. VD:
+* Immutable class là gì?
+là các lớp không thể thay đổi đối tượng bên trong nó
+VD về Immutable class: final class
+
+
+

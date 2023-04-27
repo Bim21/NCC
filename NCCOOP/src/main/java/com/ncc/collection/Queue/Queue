@@ -1,0 +1,7 @@
+Queue là một cấu trúc dữ liệu lưu trữ các phần tử theo kiểu
+"First in First Out"(FIFO), có nghĩa là phần tử đầu tiên được
+thm vào hàng đợi sẽ được xử lý trước, phần tử cuối cùng được thêm vào
+sẽ đươợc xử lý sau cùng.
+
+- Ứng dụng:
+    1. Thực thi tác vụ đồng bộ

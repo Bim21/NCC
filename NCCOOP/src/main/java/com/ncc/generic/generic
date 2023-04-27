@@ -1,0 +1,19 @@
+Một số quy ước của Generic:
+    - T - type: (kiểu dữ liệu bất kỳ thuộc Wrapper class: String, Integer, Long, Float, ...)
+    - E - element: (phần tử - được sử dụng phổ biến trong Collection Framework)
+    - K - key: khóa
+    - V - value: giá trị
+    - N - number: kiểu số: Integer, Double, Float, ...)
+
+- Generic với ký tự đại diện (Generic wildcard)
+    Trong Generic, dấu ? đc gọi là một đại diện (wildcard),
+    nó là kiểu không xác định.
+    Wildcard có thể đc sử dụng cho rất nhiều tình huống ví dụ như kiểu tham số,
+    trường hoặc biến cục bộ, đôi khi là một kiểu trả về.
+
+    Tùy vào vị tí của Wildcard mà nó sẽ có những ý nghĩa khác nhau:
+    + Collection<?>: mô tả một tập hợp chấp nhận tất cả các loại đối số (chứa mọi kiểu đối tượng).
+    + List<? extends Number>: mô tả một danh sách, nơi mà các phần tử là kiểu Number hoặc kiểu con của Number.
+    + Comparator<? super String>: Mô tả một bộ danh sách<Comparator> mà thông số phải là String hoặc cha của String.
+
+- Tái sử dụng lại với kiểu dữ liệu khác dễ dàng và cũng không cần phải viết thêm 1 class mới để xử lý kiểu dữ liệu khác.

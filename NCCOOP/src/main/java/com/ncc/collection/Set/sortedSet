@@ -1,0 +1,21 @@
+sortedSet là một interface trong java, kế thừa từ Set
+đảm bảo các phần tử của tập hợp được sắp xếp theo thứ tự tăng dần.
+Các phần tử trong SortedSet phải có thể so sánh được.
+
+các phương thức:
+    - first(): trả về phần tử đầu tiên trong SortedSet.
+    - last(): trả về phần tử đầu tiên trong SortedSet.
+    - headSet(): trả về một tập hợp con của SortedSet, chứa các phần tử nhỏ
+    hoac  bằng toElement.
+    - tailSet():
+
+
+    ứng dụng:
+        - Lưu trữ các phần tử có thứ tự:
+        - Duy trì sự liên tục giữa dữ liệu
+        - Tìm kiếm phần tử nhanh chóng:
+        - Sử dụng trong các thuật toán sắp xếp:
+        - Sử dụng trong các ứng dụng đòi hỏi sự chính xác cao:
+        ví d như trong các ứng dụng tài chính và các hệ thống giao dịch
+        - Nó đảm bảo rằng dữ liệu được lưu trữ và xử lý theo một thứ tự cụ thể
+        và không bị trùng lặp.

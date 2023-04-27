@@ -1,0 +1,346 @@
+*Cả interface và abstract class đều là các cơ chế để định nghĩa các lớp trừu tượng trong Java, tuy nhiên chúng có những khác nhau sau đây:
+ - Định nghĩa phương thức: Interface chỉ định nghĩa phương thức mà không có bất kỳ cài đặt nào,
+  trong khi abstract class có thể chứa phương thức trừu tượng và cũng có thể chứa phương thức đã được cài đặt.
+
+ - Tính đa kế thừa: Interface cho phép đa kế thừa trong khi abstract class không cho phép, một lớp chỉ có thể kế thừa từ một abstract class.
+
+ - Sử dụng: Interface thường được sử dụng khi cần định nghĩa một tập hợp các phương thức mà các lớp khác cần phải triển khai,
+ trong khi abstract class được sử dụng khi muốn xây dựng một lớp cơ sở mà các lớp khác sẽ kế thừa.
+
+ - Tính trừu tượng: Interface là một cấu trúc hoàn toàn trừu tượng,
+ trong khi abstract class có thể chứa các phương thức trừu tượng và cũng có thể có các phương thức không trừu tượng.
+
+ - Tính hiệu quả: Interface có thể hiệu quả hơn trong việc triển khai các tính năng đa kế thừa,
+  đồng thời giúp tăng tính linh hoạt và dễ dàng bảo trì trong ứng dụng lớn.
+  Tuy nhiên, abstract class thường được sử dụng trong các ứng dụng đơn giản hơn vì nó không đòi hỏi nhiều khai báo và
+  cấu trúc hơn interface.
+
+ Tóm lại, sự khác biệt giữa interface và abstract class là interface chỉ định nghĩa các phương thức mà không có bất kỳ
+ cài đặt nào và cho phép đa kế thừa,
+ trong khi abstract class có thể chứa phương thức trừu tượng và cũng có thể chứa phương thức đã được cài đặt và
+ không cho phép đa kế thừa.
+
+* Mutable:
+ - là thuộc tính của đối tượng có thể thay đổi được sau khi được tạo ra.
+ Nghĩa là nó cho phép thay đổi các giá trị bên trong đối tượng đó.
+ VD:
+ Person person = new Person("Chien");
+ System.out.println(alice.getName()); // Chien
+
+ person.setName("Thang");
+ System.out.println(person.getName()); //Thang
+
+ * Immutable:
+ - là thuộc tính của đối tượng mà giá trị của nó không thể thay đổi sau khi đã được khởi tạo.
+nếu muốn thay đổi giá trị của đối tượng immutable, ta phải tạo ra một đối tượng mới
+với giá trị mới thay vì chỉnh sửa giá trị của đối tượng cũ.
+Một số đối tượng được xây dựng với tính immutable:
+String, Integer, Long, Double, Float, Boolean,...
+
+String s1 = "hello";
+String s2 = s1.toUpperCase();
+
+System.out.println(s1); //hello
+System.out.println(s2); //HELLO
+
+s1 là một đối tượng immutable. Khi gọi phuương thức toUpperCase(), một đối tượng String mới
+được tạo ra với giá trị là "HELLO" nhưng đối tượng s1 ko bị thay đổi và vẫn giữ giá trị ban đầu là "hello".
+       -------------------------------------------------------------------------------
+*StringBuffer và StringBuilder: là 2 lớp trong Java cung cấp các phương thức để thao tác với chuỗi(String).
+một số điểm khác biệt giữa StringBuffer và StringBuilder:
+
+- StringBuffer: là lớp đc đồng bộ hóa(Synchronized), được sử dụng để xử lý chuỗi trong môi trg đa luồng.
+Vì vậy, các phương thức của StringBuffer được đảm bảo an toàn trong việc truy cập từ nhiều luồng cùng lúc.
+--> ảnh hưởng đến hiệu suất của ứng dụng
+
+- StringBuilder: là lớp ko đc đồng bộ hóa(Asynchronized), đc sử dụng để xử lý chuỗi trong môi trường đơn luồng.
+--> các phương thức của String Builder được thực thi nhanh hơn.
+
+- String vs StringBuffer vs StringBuilder:
+1. String is immutable whereas StringBuffer and String builder is mutable classes
+2. StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That’s why StringBuilder is faster than StringBuffer.
+3. String concatenation operator (+) internally uses StringBuffer or StringBuilder class.
+4. For String manipulations in a non-multi threaded environment, we should use StringBuilder else use StringBuffer class.(Đối với thao tác chuỗi trong môi trường không đa luồng, chúng ta nên sử dụng String builder khác với sử dụng lớp String Buffer)
+         -------------------------------------------------------------------------------
+* Spring Constrant Pool:
+- Là một khu vực trong bộ nhớ Java đc sử dụng để lưu trữ các chuỗi String có giá trị giống nhau.
+Khi một chuỗi String đc tạo ra bằng cách sử dụng toán tử gán "=",
+Java sẽ kiểm tra xem chuỗi này đã tồn tại trong String Constant Pool hay chưa.
+Nếu chuỗi đã tồn tại, thì biến tham chiếu của chuỗi mới tạo sẽ được trỏ tới vùng nhớ
+của chuỗi đã tồn tại trong String Constant Pool. thay vì tạo ra một chuỗi mơ và chiếm thêm bộ nhwos
+--> giúp tiết kiệm bộ nhớ, tăng tốc độ xử lý, ...
+VD:
+String s1 = "Hello";
+String s2 = "Hello";
+String s3 = new String("Hello");
+
+System.out.println(s1 == s2); // true
+System.out.println(s1 == s3); //false
+
+khi ta khai báo biến s1, s2 bằng chuỗi 'hello' --> java check xem đã tồn tại chuỗi 'hello' chưa
+--> Nếu có, sẽ trả về tham chiếu về chuỗi đó
+--> s1 và s2 đều trỏ đến cùng một vùng nhớ trong String Constant Pool.
+
+khi khai báo s3 bằng 'new String("hello")', java sẽ tạo 1 đối tượng lưu trong heap memory
+** heap memory: là bộ nhớ để lưu trữ các đối tượng(obj).
+
+* Khi nối chuỗi bằng toán tử "+" thì mỗi lần nối sẽ tạo ra một đối tượng
+--> đc lưu trong bộ nhớ heap
+        ----------------------------------------------------------------------------
+* Passing Mechanism
+    - Pass-by-value (cơ chế truyền tham trị):
+    Khi 1 phương thức đc gọi, các giá trị của các tham số được sao chép
+    vào các biến địa phương của phương thức và sử dụng trong phương thức.
+    những thay đổi khi sử dụng trong phương thức đó sẽ không làm ảnh hưởng đến giá trị ban đầu
+
+    VD:
+    public class PassByValueExample {
+       public static void main(String[] args) {
+          int num1 = 10;
+          int num2 = 20;
+          swap(num1, num2);
+          System.out.println("num1 = " + num1 + ", num2 = " + num2);
+       }
+
+       public static void swap(int n1, int n2) {
+          int temp = n1;
+          n1 = n2;
+          n2 = temp;
+       }
+    }
+    - Pass-by-Reference: (Cơ thế truyền tham chiếu):
+    Cơ chế này không được hỗ trợ trực tiếp, tuy nhiên, chúng ta có thể giả lập cơ chế này
+    bằng cách sử dụng đối tượng và truyền tham chiếu đến đối tượng đó.
+    chúng ta có một phương thức changePerson() để thay đổi thông tin của đối tượng Person:
+
+    public class PassByReferenceExample {
+       public static void main(String[] args) {
+          Person person = new Person("John", 30);
+          System.out.println("Before change: " + person);
+          changePerson(person);
+          System.out.println("After change: " + person);
+       }
+
+       public static void changePerson(Person p) {
+          p.setName("Mary");
+          p.setAge(25);
+       }
+    }
+    Kết quả sẽ hiển thị:
+
+    Before change: Person [name=John, age=30]
+    After change: Person [name=Mary, age=25]
+    Chúng ta đã truyền đối tượng Person vào phương thức changePerson(), trong đó chúng ta đã thay đổi giá trị của thuộc tính name và age.
+    Vì vậy, khi kết thúc phương thức, giá trị của đối tượng Person đã thay đổi.
+    Điều này cho thấy chúng ta đã giả lập cơ chế pass-by-reference bằng cách truyền đối tượng và tham chiếu đến đối tượng đó.
+        ------------------------------------------------------------------------
+
+*Final
+    final variable: 1 biến khai báo final thì sẽ không được thay đổi giá trị của biến đó
+    final method: 1 method đc khai báo final thì sẽ không được thay đổi cấu trúc bên trong method đó
+    final class: 1 class được khai báo final thì sẽ không cho class nào khac kế thừa class final đó.
+
+*static:
+    static variable: đc khai báo trong một class. chỉ có 1 bản sao trên toanf bộ program
+    và được chia sẻ bởi tất cả các đối tượng của class đó.
+    để truy cập biến static. ta ko cần khởi tạo đối tượng mà có thể truy cập trực tiếp từ class
+    bằng cách sử dụng tên class.
+
+    static method: đc khai báo trong 1 class và ko phụ thuộc bất kỳ obj nào của class đó.
+    static method có thể truy cập trực tiếp từ class bằng cách sử dụng tên class và ko y/c tạo obj mới
+
+    static class: được chứa trong 1 class khác. static class có thể truy cập các thành phần static của class chứa nó
+    và không thể truy cập các thành phần không static.
+    VD:
+    public class MyClass {
+        public static int count = 0; // static variable
+
+        public static void printHello() { // static method
+            System.out.println("Hello!");
+        }
+
+        public static class MyStaticClass { // static class
+            public void printCount() {
+                System.out.println("Count: " + count);
+            }
+        }
+    }
+    Trong ví dụ này, count là biến static, printHello() là phương thức static và MyStaticClass là lớp static. Các thành phần static này có thể được truy cập trực tiếp từ lớp bằng cách sử dụng tên lớp, ví dụ:
+
+    MyClass.count = 10; // set the value of static variable count
+    MyClass.printHello(); // call the static method printHello
+    MyClass.MyStaticClass myStaticObject = new MyClass.MyStaticClass(); // create an object of the static class
+    myStaticObject.printCount(); // call the method of the static class
+    ----------------------------------------------------------------------------------------------------------------
+* Try/catch vs Throw Exception, try catch resource
+
+- Try/catch là một khối mã trong java được sử dụng để xử lý ngoại lệ hoặc lỗi trong chương trình.
+Nó bao gồm một khối try, một hoặc nhiều khối catch và khối finally tùy chọn.
+
+Khối try được sử dụng để bao quanh mã có thể ném ra ngoại lệ hoặc lỗi. Nếu một ngoại lệ được ném ra,
+nó sẽ được chuyển đến khối catch tương ứng để xử lý ngoại lệ đó.
+VD:
+    try {
+       // Code có thể ném ra ngoại lệ hoặc lỗi
+    } catch (ExceptionType1 e1) {
+       // Xử lý ngoại lệ ExceptionType1
+    } catch (ExceptionType2 e2) {
+       // Xử lý ngoại lệ ExceptionType2
+    } catch (Exception e) {
+       // Xử lý tất cả các ngoại lệ khác
+    } finally {
+       // Khối lệnh được thực thi sau khối try và catch, bất kể có ngoại lệ hay không
+    }
+
+Trong ví dụ trên, nếu code bên trong khối try ném ra một ngoại lệ hoặc lỗi,
+nó sẽ được chuyển đến khối catch tương ứng để xử lý. Nếu không có khối catch nào tương ứng,
+nó sẽ được chuyển đến khối catch cuối cùng.
+Sau khi xử lý xong ngoại lệ, khối finally sẽ được thực thi, bất kể có
+ngoại lệ hay không.
+
+* try catch resource
+ Dùng để xử lý các tài nguyên đóng tự động. Trong java, các tài nguyên như kết nối csdl, tệp, luồng,...
+ cần phải được đóng lại khi sử dụng xong để giải phóng tài nguyên và tránh gây ra lỗi hoặc lãng phí bộ nhớ
+
+ Khi sử dụng try-catch-resource, bạn có thể đảm bảo rằng các tài nguyên sẽ được đóng đúng cách maf
+ không cần thực hiện việc đóng chúng trong khồi finally.
+
+ Cú pháp của try-catch-resource như sau:
+    try (resource) {
+        // Code sử dụng resource
+    } catch (Exception e) {
+        // Code xử lý ngoại lệ
+    }
+trong đó, "resource" là tài nguyên cần được đóng tự động và được khai báo trong khối try.
+Khi khối try kết thúc, resource sẽ được đóng tự động.
+
+VD:
+    try (FileReader fileReader = new FileReader("test.txt");
+         BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            System.out.println(line);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+Trong ví dụ này, FileReader và BufferReader là các tài nguyên được đóng tự động bởi try-catch-resource.
+Khi khối try kết thúc, hai tài nguyên này sẽ được đóng tự động và giải phóng tài nguyên.
+---------------------------------------------------------------------------------------------------
+* Synchronized và Asynchronized
+  VD:
+  class Table {
+      synchronized void printTable(int n) { // synchronized method
+          for (int i = 1; i <= 5; i++) {
+              System.out.println(n * i);
+              try {
+                  Thread.sleep(400);
+              } catch (Exception e) {
+                  System.out.println(e);
+              }
+          }
+      }
+  }
+
+  class MyThread1 extends Thread {
+      Table t;
+
+      MyThread1(Table t) {
+          this.t = t;
+      }
+
+      public void run() {
+          t.printTable(5);
+      }
+  }
+
+  class MyThread2 extends Thread {
+      Table t;
+
+      MyThread2(Table t) {
+          this.t = t;
+      }
+
+      public void run() {
+          t.printTable(100);
+      }
+  }
+
+  public class TestSynchronization2 {
+      public static void main(String args[]) {
+          Table obj = new Table();// tao mot object
+          MyThread1 t1 = new MyThread1(obj);
+          MyThread2 t2 = new MyThread2(obj);
+          t1.start();
+          t2.start();
+      }
+  }
+Khi một khối synchronized được thực thi, các luồng khác phải đợi cho đến khi
+luồng hiện tại hoàn thành hoặc giải phóng khối đồng bộ
+* Vì sao phải sử dụng Synchronized
+Việc đồng bộ hóa chủ yếu được sử dụng để:
+- Để tránh sự can thiệp của luồng khác.
+- Để đảm bảo vấn đề nhất quán của chương trình.
+
+* Asynchronized trong java có thể được thực hiện bằng cách sử dụng
+Executro Framework hoặc Future Interface. Việc sử dụng các phương thức này cho
+phép các luồng hoạt động độc lập và không cần phải chờ đợi nhau.
+VD: Executor executor = Executors.newFixedThreadPool(10);
+    executor.execute(new Runnable() {
+        @Override
+        public void run() {
+            // code here
+        }
+    });
+
+* Sự khác biệt giữa Synchronized và Asynchronized:
+- Khi sử dụng Synchronized các luồng phải đợi cho đến khi đối tượng đồng bộ hoàn thành trước khi thực hiện các tác vụ tiếp theo
+- Asynchronized cho phép các luồng hoạt động độc lập và không cần phải chờ đợi nhau.
+- Synchronized được sử dụng để đảm bảo tính toàn vẹn của dữ liệu và tránh các sự kiện xung đột
+trong khi ASynchronized được sử dụng khi độ trễ trong việc thực hiện các tác vụ không quan trọng.
+-----------------------------------------------------------------------------------------------------
+*Lambda (Java Lambda Expression)
+- là một tính năng được thêm vào java 8.
+    + Functional Interface:
+        là một interface chỉ chứa 1 và chỉ một abstract method.
+        có thể đươợc gọi là Single Abstract Method(SAM)
+    @FunctionalInterface: giúp bắt lỗi ở thời điểm biên dịch nếu vô tình thêm
+    một method trừu tượng khác nữa vào interface có đánh dấu bởi annotation này
+    Một số quy tắc khai báo Functional Interface:
+        + chỉ có duy nhất một method trừu tượng.
+        + có thể có các phương thức của lớp java.lang.Object
+        + Phương thức default and static ko phá vỡ quy tắc của
+        Functional Interface.
+        + một Function Interface có thể kế thừa từ một Function Interface khác chỉ khi
+        nó không có bất kỳ phương thức trừu tượng nào.
+
+    Phải nắm rõ Functional Interface vì một trong các ứng dụng qtrong nhất
+    của Lambda là để tạo ra instance(thể hiện) cho interface đó.
+
+    Toán tử mũi tên (->)
+    + được dùng trong biểu thức Lambda với mục đích
+    chia biểu thức Lambda thành 2 phần: tham số và nội dung thực thi
+    VD:
+            (int a, int b) -> {do something};
+
+*Biểu thức lambda là gì? Tại sao phải sử dụng biểu thức lambda
+    - Biểu thức Lambda: đc định nghĩa là một hàm ẩn danh.
+    vì là hàm ẩn danh nên nó có đầy đủ đặc điểm của một hàm là có:
+        + tham số(parameter) và nội dung thực thi(body).
+      tham số của 1 hàm thì có thể có hoặc không,(body) thì có kiểu trả về hoặc ko
+      Biểu thức Lambda sẽ dựa trên danh sách tham số đầu vào và xử lý bằng những lệnh
+      ở phần body để cho ra kết quả.
+
+      Biểu thức Lambda cung cấp cách thức implement cho method được định nghĩa ở functional interface.
+       Biểu thức Lambda cũng cung cấp các thư viện giúp cải tiến cách thức làm việc
+       với Collection như duyệt, filter, và truy xuất dữ liệu...
+
+     * Lợi ích khi sử dụng Lambda: giảm số dòng code
+
+    * Cú pháp của biểu thức Lambda:
+        (argument-list) -> {body}
+    agrument-list: danh sách tham số, có thể không có, có một hoặc nhiều tham số.
+    arrow-operator(->): toán tử mũi tên đc su dụng để liên kết danh sách tham số và body của biểu thức.
+    body: nội dung thực thi, là 1 khối lệnh hoặc 1 biểu thức.
+
+

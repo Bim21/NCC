@@ -1,0 +1,100 @@
+* Iterable:
+    - Các collection trong Java như `ArrayList`, `LinkedList`, `HashSet`, `TreeSet`,...
+    đều implement interface `Iterable` để cho phép chúng ta duyệt qua các phần tử trong collection đó.
+
+* Collection:
+    Trong Java, Collection là một framework để lưu trữ và xử lý các đối tượng dữ liệu.
+    Nó cung cấp một số interface và lớp để quản lý các tập hợp đối tượng dữ liệu khác nhau
+    như danh sách(List), tập hợp(Set), bản đồ(Map) và hàng đợi(Queue).
+
+    Các Interface chính trong Collection:
+        - Collection: là interface cha của tất cả các collection, định nghĩa các phương thức chung cho tất cả các loại collection.
+        - List: là một collection có thứ tự và cho phép các phần tử trùng lặp.
+        - Set: là một collection không có thứ tự và không cho phép các phần tử trùng lặp.
+        - Map: là một collection có cấu trúc dữ lệu key-value pair.
+
+        Một số lớp thực hiện các interface trên bao gồm: ArrayList, LinkedList,
+        HashSet, TreeSet, HashMap, TreeMap, v.v
+
+        Các Collection được sử dụng phổ biến trong Java để quản lý và xử lý dữ liệu.
+---------------------------------------------------------------------------------------------
+* List: ArrayList, LinkedList, Vector, Stack
+    - ArrayList:
+        + là mảng có kích thước động.
+        + Có thời gian truy suất rất nhanh, vì chỉ cần truy xuất theo
+        chỉ số của phần tử trong mảng.
+        + có thể truy cập các phần tử trong danh sách theo chỉ mục và
+        thêm/ xóa phần tử ở cuối danh sách nhanh chóng.
+
+    - Một số phương thức quan trọng của ArrayList:
+        + add(E e): thêm phần tử vào cuối danh sách.
+        + add(int index, E element): chèn phần tử vào vị trí được chỉ định trong danh sách.
+        + remove(int index): xóa phần tử tại vị trí chỉ mục đã cho.
+        + get(int index): lấy phần tử tại vị trí chỉ mục đã cho.
+        + set(int index, E element): thay thế phần tử ở vị trí được chỉ định trong danh sách bằng phần tử được cung cấp.
+        + size(): trả về số lượng phần tử hiện có trong danh sách.
+        + indexOf(Object o): trả về chỉ mục đầu tiên của phần tử đã cho
+        trong danh sách( nếu không tồn tại thì trả về -1).
+        + clear(): xóa tất cả các phần tử khỏi danh sách.
+        + constant(Object o): kiểm tra danh sách có chứa phần tử được chỉ định không, trả về 'true' nếu có và `false` nếu không
+        + isEmpty(): kiểm tra xem danh sách có rỗng không, trả về `true` nếu danh sách rỗng và `false` nếu không.
+----------------------------------------------------------------------------------------------------
+    - LinkedList:
+        + là một danh sách liên kết đươc sử dụng trong Java để lưu trữ các phần
+        tử dưới dạng các nút (node). Mỗi nút chứa một giá trị và một liên kết đến nút tiếp theo
+        trong danh sách.
+        + phải truy xuất tuần tự từ đầu danh sách đến vị trí cần truy xuất
+        + LinkedList có thể được sử dụng để thêm hoặc xóa phần tử ở bất kỳ vị trí nào
+        trong danh sách.
+    - Các phương thức chính trong LinkedList trong Java gồm:
+        + add(element): Thêm phần tử vào cuối danh sách.
+        + add(index, element): Thêm phần tử vào vị trí chỉ định trong danh sách.
+        + addFirst(element): Thêm phần tử vào đầu danh sách.
+        + addLast(element): Thêm phần tử vào cuối danh sách(Tương đương với phương thức add(element))
+        + get(index): Trả về phần tử ở vị trí chỉ định trong danh sách.
+        + getFirst(): Trả về phần tử đầu tiên trong danh sách.
+        + getLast(): Trả về phần tử cuối cùng trong danh sách.
+        + remove(): Loại bỏ và trả về phần tử cuối cùng trong danh sách.
+        + remove(index): Loại bỏ và trả về phần tử ở vị trí chỉ định trong danh sách.
+---------------------------------------------------------------------------------------------------------
+    - Vector:
+        - Tương tự như ArrayList nhưng cung cấp đồng bộ hóa, có nghĩa là chỉ có một luồng có thể truy cập
+        vào một thời điểm.
+        - Vector được sử dụng chủ yếu trong các ứng dụng cần độ tin cậy cao và không chấp nhận bất kỳ lỗi nào trong quá trình thực thi.
+        Nó cũng được sử dụng trong các ứng dụng đa luồng
+        và được ưa chuộng hơn ArrayList khi cần sử dụng phương thức đồng bộ hóa.
+
+    - Các phương thức có trong Vector:
+        + add(element):
+        + add(int index, E element)
+        + remove(int index)
+        + get(int index)
+        + set(int index, E element)
+        + size()
+        + capacity(): trả về số phần tử mà Vector có thể chứa mà không cần phải cấp phát bộ nhớ thêm.
+        + isEmpty(): kiểm tra xem Vector có rỗng hay không.
+        + contains(element):
+        + indexOf(element): trả về vị tris đầu tiên của phần tử được chỉ định trong vector
+    - Stack:
+        - là một lớp được sử dụng để thực hiện các hoạt động ngăn xếp(stack). Cơ chế LIFO
+        Một cách đơn giản, stack có thể được coi như một tập hợp các phần tử, nơi phần
+        tử được chèn vào đầu ngăn xếp được gọi là "pushed" và phần tử được lấy ra khỏi đầu ngăn xếp
+        được gọi là "popped". Stack được thực hiện bằng cách sử dụng cấu trúc danh sách liên kết đơn hoặc mảng.
+
+            - push(Object element): đẩy phần tử vào đầu stack.
+            - pop(): lấy ra và xóa phần tử ở đầu stack.
+            - peek(): trả về phần tử ở đầu stack nhưng không xóa nó.
+            - empty(): kiểm tra stack có rỗng không.
+            - search(Object element): tìm kiếm phần tử trong stack và trả về vị trí
+            của phần tử đó tính từ đỉnh stack.
+---------------------------------------------------------------------------------------------------------------------
+* Set: Hashset, LinkedHashset
+- Set: là một interface trong java collection framework,
+đại diện cho một tập hợp các phần tử duy nhât và không có thứ tự. Các phần tử trong Set
+được sắp xếp ngẫu nhiên và không cho phép chứa các phần tử trùng lặp.
+    - Hashset:
+        + Cung cấp một cách để lưu trữ và quản lý một tập hợp các phần tử duy nhất,
+        + HashSet sử dụng bảng băm để lưu trữ các phần tử của nó.
+        Khi một phần tử được thêm vào HashSet, một bảng băm được áp dụng vào đối tượng đó
+        và giá trị băm đó được sử dụng để xác định vị trí.
+

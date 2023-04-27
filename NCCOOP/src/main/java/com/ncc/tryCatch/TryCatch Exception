@@ -1,0 +1,17 @@
+có 3 ngoại lệ chính:
+    - Checked exception: Các lớp extends từ lớp Throwable ngoại trừ Error và RuntimeException
+
+    - Unchecked exception: Các lớp extends từ RuntimeException được gọi là unchecked exception,
+    ví dụ: ArithmeticException, NullPointerException,ArrayIndexOutOfBoundsException,... Các ngoại lệ unchecked ko đuợc kiểm
+    tra tại complie-time mà chúng ktra tại runtime
+
+    - Error: lỗi không thể cứu chữa được OutofMemoryError,
+    VirtualMachineError, AsserrtionError.
+
+
+Checked phải catch, uncheck không phải catch.
+Kịch bản phổ biến:
+    + ArithmeticException: xảy ra khi chia một số cho 0.
+    + NullPointerException: thực hiện hành động bất kỳ trên biến null
+    + NumberFormatException: sai định dạng.
+

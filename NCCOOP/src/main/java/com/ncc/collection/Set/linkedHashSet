@@ -1,0 +1,5 @@
+linkedHashSet vs hashSet:
+sự khác biệt giữa 2 cái này là thứ tự của các phần tử
+HashSet không đảm bảo thứ tự của các phần tử, trong khi LinkedHashSet
+duy trì thứ tự của các phần tử theo thứ tự chèn.
+

@@ -1,0 +1,14 @@
+enum là một kiểu dữ liệu đặc biệt cho phép 1 biến có thể là một tập hợp các
+hằng số định sẵn. Biến phải bằng một trong các giá trị đã được xác định trước
+cho nó.
+
+Bởi vì các giá trị của Enum là các hằng số, nên tên của các trường
+kiểu enum là các chữ cái hoa.
+
+enum có thể chứa phương thức không?
+có, enum có thể chứa cả hằng số và phương thức
+
+enum không thể extends bất cứ class nào khác
+
+- EnumSet: là một tập hợp các phần tử enum và được cài đặt
+bằng cách sử dụng một bit vector và 

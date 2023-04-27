@@ -1,0 +1,35 @@
+//** Collection Stream là một tính năng mới được giới thiệu trong java8,
+// cung cấp 1 cách mới và tiện lợi hơn để thao tác trên Collection.
+// Stream giúp chúng ta thực hiện các hoạt động trên Collection như filter,
+map, reduce, sort và các hoạt động một cách dễ dàng và hiệu quả hơn
+
+Các phương thức trong CollectionStream:
+
+    1. Filter(Predicate<T> predicate): Lọc các phần tử thỏa mãn điều kiện được
+    đưa ra bơi Predicate.
+
+    2. map(Function<T, R> mapper): Chuyển đổi các phần tử của Collection từ kiểu
+    T sang kiểu R bằng cách áp dụng hàm mapper.
+
+    3. flatMap(Function<T, Stream<R>> mapper): Chuyển đổi các phần tử của Collection
+    tu kiểu T sang kiểu R và hơp nhất chúng thành một Stream duy nhất.
+
+    4. reduce(T identity, BinaryOperator<T> accumulator): Tính toán một giá trị ket hợp
+    từ các phần tử của Collection bằng cách sử dụng hàm accumulator và giá trị ban đầu indentity
+
+    5. sorted(): Sắp xếp các phần tử của Collection theo thứ tự mặc định.
+
+    6. sorted(Comparator<T> comparator) Sắp xếp các phần tử của Collection theo thứ tự
+    được chỉ định bởi Comparator.
+
+    7. forEach(Consumer<T> action): Thực hiện một hành động trên từng phần tử của Collection
+
+    8. collect(Collector<T, A, R> collector): Thu nhập các phần tử cuả Collection
+    vào một đối tượng được chỉ định bởi Collector.
+
+    9. anyMatch(Predicate<T> predicate): Kiểm tra xem có phần tử nào trong Collection
+    thỏa mãn điều kiện được đưa ra bởi Predicate hay không.
+
+    10. allMatch(Predicate<T> predicate): Kiểm tra xem tất cả các phần tử trong Collection có
+    thỏa mãn điều kiện được đưa ra bởi Predicate hay không.
+

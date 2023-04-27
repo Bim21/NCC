@@ -1,0 +1,98 @@
+Vector: là 2 chiều hay 1 chiều? 1 chiều
+
+- CopyOnWriteArrayList
+- ConcurrentSet
+TreeSet: lưu phần tử giống như set nhưng lưu theo dạng cây
+
+giả sử add 1000 phần tử vào cuối list thì nên dùng arrayList hay LinkedList?
+ArrayList vì là add phần tử vào cuối list
+LinkedList(tùy trường hợp)
+
+có 3 trường hợp: add vào đầu, add vào cuối, add vào giữa
+không phải lúc nào LinkedList cũng nhanh hơn
+
+*ENUM:
+- ứng dụng của enum: so sánh
+
+*Interface: Java 8
+
+* Abstract class và interface khác nhau như thế nào:
+* Khi nào dùng Interface? Khi nào dùng Abstract?
+
+*tìm hiểu về design pattern
+
+*giả sử có final kiểu arraylist thì ta có add ddc thêm phần tử cho nó không?
+có
+
+* Generic Interface (kees thừa như nào?)
+* WildCardGeneric
+* InnerClass và NestedClass:
+    - ứng dụng
+*Exception: phải hiểu khi nào catch, khi nào throws
+*lambda:
+    - Lambda Collection.
+    - Lambda FunctionalInterFace
+
+*Spring pool:
+s1 = "hello"
+s6 = "he" + "llo"; s1 có bằng s6 k?
+s7 = "he"
+s8 = s7 + "llo", s8 = s1 k?
+
+System.identityHashCode();
+
+*SynchronizedBlock
+
+*List<String>lisist = new ArrayList<>();
+list.add A
+list.add B
+list.add C
+
+for(String item: list){
+    item=item+"D";
+    }
+    System.out.println(list);
+
+  list có thay đổi k?
+
+  *List<StringBuilder>lisist = new ArrayList<>();
+  list.add A
+  list.add B
+  list.add C
+
+  for(String item: list){
+      item=item.append("D");
+      }
+      System.out.println(list);
+
+    list có thay đổi k?
+
+enumSet
+enumMap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    10 10 7.5 5 3.3
+    30 35 25 22 15
+    95 38
+    127
+     32
+    159

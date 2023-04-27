@@ -1,0 +1,14 @@
+
+
+ứng dụng của treeSet:
+    - Sắp xếp tự động:
+    - tìm kiếm và truy xuất nhanh:
+    - lọc dữ liệu:
+    - xóa phần tử:
+    - Sử dụng trong các thuật toán: tìm kiếm phần tử lớn nhất,
+    nhỏ nhất, hoặc các phần tử lớn hơn hoặc nhỏ hơn một giá trị nhất định.
+
+
+hashSet vs hashMap?
+cơ chế, ứng dụng,
+tìm hiểu kỹ về Set và Map

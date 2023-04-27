@@ -1,0 +1,21 @@
+HashSet là một lớp được sử dụng để lưu trữ một tập hợp các đối tượng
+duy nhất, không có thứ tự cụ thể. HashSet được triển khai dựa trên cấu trúc dữ liệu
+bảng băm để lưu trữ và truy cập các phần tử.
+
+Một số tính năng của HashSet bao gồm:
+    - chỉ chứa các phần tử duy nhất. Nếu thêm một phần tử đã tồn tại trong
+    HashSet, phần tử mới sẽ bị loại bỏ.
+    - không duy trì thứ tự của các phần tử, do đó không thể sử dụng để lấy các
+    phần tử theo thứ tự.
+    - cho phép lưu trữ phần tử null.
+    - Hỗ trợ các phương thức để thêm, xóa và kiểm tra sự tồn tại của các phần tử trong
+    HashSet.
+    - HashSet được triển khai bằng cấu trúc bảng băm, do đó việc truy cập các phần tử sử dụng
+    phương thức hash, giúp đạt được hiệu suất cao.
+
+    Các phương thức pho biến trong hashSet:
+    1. add(Object o): thêm phần tử mơ vào hashSet
+    2. remove(Object o): Xóa phần tử đươc chỉ định khoi HashSet.
+    3. contains(Object o): Kiểm tra xem một phần tử đã tồn tại trong HashSet hay chưa
+    4. size(): Trả về số lượng phần tử hiện có trong hashSet.
+    5. clear(): Xóa tất cả các phaan tử khỏi HashSet.

@@ -1,0 +1,8 @@
+inner class là một class được định nghĩa bên trong một class khác.
+Inner class được sử dụng để đóng gói và bảo vệ tính bao đóng của một class.
+
+Có 4 loại inner class:
+    1. Non-static inner class:
+    2. Static inner class:
+    3. Local inner class:
+    4. Anonymous inner class:

@@ -1,0 +1,6 @@
+HashTable:
+    - cơ chế lưu trữ dữ liệu tương tự như HashMap nhưng được đồng bộ hóa
+    - các tính năng tương tự như hashMap nhưng tất cả các phương thức đều được đồng bộ
+    - không cho phép bất ký giá trị null nào
+    - Iterator của hashMap được hỗ trợ, hashTable thì không
+    -
