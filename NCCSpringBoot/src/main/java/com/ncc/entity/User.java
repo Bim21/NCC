@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Formula;
 
 @Getter
@@ -37,9 +38,11 @@ public class User {
     private String fullName;
 
     @Column(name = "role", nullable = false)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    @ColumnDefault("'EMPLOYEE'")
+    private Role role = Role.EMPLOYEE;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private UserStatus status = UserStatus.NOT_ACTIVE;
 
